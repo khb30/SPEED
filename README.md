@@ -20,11 +20,11 @@
 
 ## About The Project
 
-![Detection model](images/screenshot.png)
+The SPEED model builds on the standard SIR framework by incorporating individual-level testing and diagnosis.
+In particular, the model simulates routine yet sparse testing during the initial outbreak stages, with the capacity to escalate to heightened surveillance as part of an incident response strategy
 
-The SIR-detection model builds on the standard SIR framework by integrating the process of testing, and subsequent diagnosis, into the model at an individual level. This allows the model to reflect the specific dynamics and detection process of infectious diseases in the early stages of an outbreak. 
-
-This novel compartmental model, developed to serve as a general inference tool for estimating epidemiological parameters from an initial detected case or first two cases. By focusing on the early stages of disease spread, the model provides invaluable insights on the range of feasible R values for a disease, and the time to subsequent infections. 
+Model simulation is a stochastic process, employing a Gillespie-like algorithm, which is critical for capturing the inherent randomness in early-stage outbreak dynamics.
+The intended use of the SPEED framework is for the analysis of early-stage outbreak scenarios, serving two main functionalities: inference and evaluating the time to the next detection.
 
 <p align="right">(<a href="#speed-a-stochastic-predictor-of-early-epidemic-detection">back to top</a>)</p>
 
