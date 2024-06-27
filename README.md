@@ -26,7 +26,7 @@ The SIR-detection model builds on the standard SIR framework by integrating the 
 
 This novel compartmental model, developed to serve as a general inference tool for estimating epidemiological parameters from an initial detected case or first two cases. By focusing on the early stages of disease spread, the model provides invaluable insights on the range of feasible R values for a disease, and the time to subsequent infections. 
 
-<p align="right">(<a href="#table-of-contents">back to top</a>)</p>
+<p align="right">(<a href="#speed-a-stochastic-predictor-of-early-epidemic-detection">back to top</a>)</p>
 
 ## Getting Started
 
@@ -52,7 +52,7 @@ To install the **SPEED** package , you need to clone the repository from GitHub 
     Pkg.instantiate()
     ```
 
-<p align="right">(<a href="#table-of-contents">back to top</a>)</p>
+<p align="right">(<a href="#speed-a-stochastic-predictor-of-early-epidemic-detection">back to top</a>)</p>
 
 ### Examples
 
@@ -74,7 +74,7 @@ To run code in parallel execute the following, specifying the number of cores:
 
 `julia -p cores example_script.jl --days 14 --N 500000 --p 0.0007 --prior "Uniform" --n 100 --cases 1`
 
-<p align="right">(<a href="#table-of-contents">back to top</a>)</p>
+<p align="right">(<a href="#speed-a-stochastic-predictor-of-early-epidemic-detection">back to top</a>)</p>
 
 ### Tests
 
@@ -85,13 +85,13 @@ To ensure that everything is working correctly, you can run the tests included i
     Pkg.test("SPEED")
 ```
 
-<p align="right">(<a href="#table-of-contents">back to top</a>)</p>
+<p align="right">(<a href="#speed-a-stochastic-predictor-of-early-epidemic-detection">back to top</a>)</p>
 
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-<p align="right">(<a href="#table-of-contents">back to top</a>)</p>
+<p align="right">(<a href="#speed-a-stochastic-predictor-of-early-epidemic-detection">back to top</a>)</p>
 
 ## Contact
 
@@ -99,4 +99,4 @@ Kathryn Bowers: khb30@cam.ac.uk
 
 Project Link: [https://github.com/khb30/detection-model](https://github.com/khb30/detection-model)
 
-<p align="right">(<a href="#table-of-contents">back to top</a>)</p>
+<p align="right">(<a href="#speed-a-stochastic-predictor-of-early-epidemic-detection">back to top</a>)</p>
