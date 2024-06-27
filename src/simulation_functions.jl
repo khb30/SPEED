@@ -200,5 +200,5 @@ function simulation(N::Int, Rt::Float64, p::Float64, T_R::Distributions.Gamma, T
     
     end
 
-    return states, population, max_time, population[D, :].diagnosis_time
+    return states, population
 end
