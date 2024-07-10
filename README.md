@@ -97,6 +97,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 Kathryn Bowers: khb30@cam.ac.uk
 
-Project Link: [https://github.com/khb30/detection-model](https://github.com/khb30/SPEED)
+Project Link: [https://github.com/khb30/SPEED](https://github.com/khb30/SPEED)
 
 <p align="right">(<a href="#speed-a-stochastic-predictor-of-early-epidemic-detection">back to top</a>)</p>
