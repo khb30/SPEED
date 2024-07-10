@@ -50,14 +50,23 @@ function main()
         default = 1
     end
 
+    @add_arg_table s begin
+        "--hs"
+        help = "Heightened surveillance average population diagnosis probability"
+        arg_type = Any
+        default = nothing
+    end
+
     parsed_args = parse_args(s)
 
     T_max = parsed_args["days"]
     p = parsed_args["p"]
     N = parsed_args["N"]
+    hs = parsed_args["hs"]
+    n = parsed_args["n"]
+    cases = parsed_args["cases"]
 
     prior = parsed_args["prior"]
-
     if prior == "Uniform"
         distribution = Uniform(0.1,2)
     elseif prior == "H1N2"
@@ -66,16 +75,16 @@ function main()
         distribution = Gamma(90.25, 1/70.51)
     end
 
-    n = parsed_args["n"]
-    cases = parsed_args["cases"]
-
-    results = pmap(x -> distribution_simulation(x, N, distribution, p, Gamma(8,1/2), Gamma(144/16,16/12), T_max, cases)
+    results = pmap(x -> distribution_simulation(x, N, distribution, p, Gamma(8,1/2), Gamma(144/16,16/12), T_max, cases, hs)
 , 1:n)
 
     df = DataFrame(map(idx -> getindex.(results, idx), eachindex(results[1])), [:R, :infected_cases])
 
-    CSV.write("inference_days_"*string(T_max)*"_p_"*string(p)*"_N_"*string(N)*"_"*prior*"_number_"*string(n)*".csv", df, header = true)
- 
+    if isnothing(hs)
+        CSV.write("inference_days_"*string(T_max)*"_p_"*string(p)*"_N_"*string(N)*"_"*prior*"_number_"*string(n)*".csv", df, header = true)
+    else
+        CSV.write("inference_days_"*string(T_max)*"_p_"*string(p)*"_hs_"*string(hs)*"_N_"*string(N)*"_"*prior*"_number_"*string(n)*".csv", df, header = true)
+    end
 end
 
 main()
