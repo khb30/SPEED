@@ -37,7 +37,7 @@ function main()
     end
 
     @add_arg_table s begin
-        "--P"
+        "--hs"
         help = "Heightened surveillance probability"
         arg_type = Union{Float64, Nothing}
         default = nothing
@@ -63,11 +63,11 @@ function main()
     p = parsed_args["p"]
     N = parsed_args["N"]
     Rt = parsed_args["Rt"]
-    P = parsed_args["P"]
+    hs = parsed_args["hs"]
     d_max = parsed_args["d_max"]
     sigma = parsed_args["sigma"]
 
-    results = simulation(N, Rt, p, Gamma(8,1/2), Gamma(144/16,16/12), T_max, P, d_max, sigma)
+    results = simulation(N, Rt, p, Gamma(8,1/2), Gamma(144/16,16/12), T_max, hs, d_max, sigma)
 
     CSV.write("simulation_states_"*string(T_max)*"_Rt_"*string(Rt)*"_p_"*string(p)*"_N_"*string(N)*".csv", results[1], header = true)
 

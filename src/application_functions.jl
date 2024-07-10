@@ -1,4 +1,4 @@
-function distribution_simulation(x, N::Int, distribution::Union{Distributions.Gamma, Distributions.Uniform}, p::Float64, T_R::Distributions.Gamma, T_D::Distributions.Gamma, T_max:: Float64, cases:: Int64, P:: Union{Float64, Nothing} = nothing, d_max::Int = 1, sigma:: Union{Float64, Nothing} = nothing)
+function distribution_simulation(x, N::Int, distribution::Union{Distributions.Gamma, Distributions.Uniform}, p::Float64, T_R::Distributions.Gamma, T_D::Distributions.Gamma, T_max:: Float64, cases:: Int64, P:: Union{Float64, Nothing} = nothing, sigma:: Union{Float64, Nothing} = nothing)
     fll = Bool(1)
     Rt = nothing
 
@@ -7,7 +7,7 @@ function distribution_simulation(x, N::Int, distribution::Union{Distributions.Ga
     while fll
 
         Rt = rand(distribution)
-        simulation_results = simulation(N, Rt, p, T_R, T_D, T_max, P, d_max, sigma)
+        simulation_results = simulation(N, Rt, p, T_R, T_D, T_max, P, cases, sigma)
         
         if last(simulation_results[1]).d == cases
             fll = Bool(0)

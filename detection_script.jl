@@ -46,7 +46,7 @@ function main()
     @add_arg_table s begin
         "--hs"
         help = "Heightened surveillance average population diagnosis probability"
-        arg_type = Any
+        arg_type = Union{Float64, Nothing}
         default = nothing
     end
 
